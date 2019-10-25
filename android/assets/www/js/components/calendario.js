@@ -179,8 +179,10 @@ var calendario = {
   },
 
   adicionaMissoes: function (mes, ano) {
+    let inicio = new Date(ano, mes);
+    let fim = new Date(ano, mes,calendario.data.anos[ano].meses[mes].totalDias);
     if (calendario.data.anos[ano].meses[mes].missoes) {
-      missoes.ajax(mes, ano, function (retorno) {
+      missoes.ajax(inicio,fim, function (retorno) {
         calendario.data.anos[ano].meses[mes].missoes = retorno;
       });
       console.log('Missao do mes ' + mes + ' carregada');

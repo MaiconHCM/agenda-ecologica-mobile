@@ -1,6 +1,9 @@
-missoes={
-  ajax:function(ano,mes,retorno){
-    return retorno( {
+missoes = {
+  ajax: function (ano, mes, retorno) {
+    //LOGICA AQUI
+
+
+    return retorno({
       0: {
         inicio: '1571673038',
         fim: '1572018638',
