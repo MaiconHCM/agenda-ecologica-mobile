@@ -1,5 +1,6 @@
 app = {
   url: "http://localhost:1337/",
+  offlineMode:true,
   inicia: function () {
     console.log('iniciando app');
     $(".calendar-container__btn--right").click(function () {

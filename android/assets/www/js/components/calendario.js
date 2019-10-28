@@ -182,7 +182,7 @@ var calendario = {
   adicionaMissoes: function (mes, ano) {
     let inicio = new Date(ano, mes);
     if (calendario.data.anos[ano].meses[mes].missoes) {
-      missoes.ajax(inicio, function (retorno) {
+      missoes.listaMissoes(inicio, function (retorno) {
         calendario.data.anos[ano].meses[mes].missoes = retorno;
       });
       console.log('Missao do mes ' + mes + ' carregada');
@@ -227,7 +227,7 @@ var calendario = {
               <span class="events__name">'+ missoes[prop].titulo + '</span>\n\
               <span class="events__date">'+ inicio.getDate() + ' de ' + this.mesParaTexto(inicio.getMonth()) + '</span>\n\
             </div>\n\
-            <span class="events__tag">'+ missoes[prop].pontos + ' Pontos</span>\n\
+            <span onclick="lista_missoes.descreveMissao('+missoes[prop].id+')" class="events__tag">'+ missoes[prop].pontos + ' Pontos</span>\n\
             </li>';
         }
       } else {
@@ -250,7 +250,7 @@ var calendario = {
                 <span class="events__name">'+ missoes[prop].titulo + '</span>\n\
                 <span class="events__date">'+ inicio.getDate() + ' de ' + this.mesParaTexto(inicio.getMonth()) + ' - ' + fim.getDate() + ' de ' + this.mesParaTexto(fim.getMonth()) + '</span>\n\
               </div>\n\
-              <span class="events__tag">'+ missoes[prop].pontos + ' pontos</span>\n\
+              <span onclick="lista_missoes.descreveMissao('+missoes[prop].id+')" class="events__tag">'+ missoes[prop].pontos + ' pontos</span>\n\
               </li>';
         }
       }

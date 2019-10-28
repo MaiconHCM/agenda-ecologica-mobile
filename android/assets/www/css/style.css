@@ -86,9 +86,12 @@ header {
   background: transparent;
   border: 0;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 26px;
   outline: none;
   color: #E9E8E8;
+}
+.calendar-container__btn i{
+  font-style: normal;
 }
 .calendar-container__btn:hover, .calendar-container__btn:focus {
   color: #9FAAB7;
@@ -267,6 +270,9 @@ header {
   align-items: center;
   margin-bottom: 16px;
 }
+.events__item:active {
+  background: #BEC1CA;
+}
 .events__item--left {
   width: calc(100% - 76px);
 }
@@ -281,4 +287,8 @@ header {
   font-size: 12px;
   color: #9FAAB7;
   display: inline-block;
+}
+.img-responsive{
+  width: 100%;
+  height: auto;
 }

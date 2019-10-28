@@ -3,13 +3,23 @@ usuario = {
     usuarios: null,
     dados: {},
     ajax: function (retorno) {
+        if (app.offlineMode === true) {
+            return retorno(data = {
+                1: {
+                    nome: 'admin',
+                    senha: 'admin',
+                    pontos: 0,
+                    id: 1
+                }
+            });
+        };
         if (this.usuarios) {
             retorno(this.usuarios);
         } else {
             $.get(app.url + "usuario", function (data) {
                 if (data) {
                     usuario.usuarios = data;
-                    retorno(data);
+                    return retorno(data);
                 }
             }).fail(function () {
                 new Noty({
