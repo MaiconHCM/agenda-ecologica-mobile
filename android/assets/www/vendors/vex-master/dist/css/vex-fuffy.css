@@ -89,6 +89,7 @@
       color: #fff;
       background: #666; }
   .vex.vex-theme-flat-attack .vex-dialog-form .vex-dialog-message {
+    font-family: "Montserrat", sans-serif;
     margin-bottom: .5em; }
   .vex.vex-theme-flat-attack .vex-dialog-form .vex-dialog-input {
     margin-bottom: .5em; }

@@ -19,6 +19,7 @@ var calendario = {
     calendario.mesSelecionado = dt1.getMonth();
     calendario.anoSelecionado = dt1.getFullYear();
     calendario.carregaHtml(dt1.getMonth(), dt1.getFullYear());
+    setTimeout(function(){  calendario.carregaMissoes() }, 100);
   },
 
   diasNoMes: function (mes, ano) {
@@ -180,9 +181,8 @@ var calendario = {
 
   adicionaMissoes: function (mes, ano) {
     let inicio = new Date(ano, mes);
-    let fim = new Date(ano, mes,calendario.data.anos[ano].meses[mes].totalDias);
     if (calendario.data.anos[ano].meses[mes].missoes) {
-      missoes.ajax(inicio,fim, function (retorno) {
+      missoes.ajax(inicio, function (retorno) {
         calendario.data.anos[ano].meses[mes].missoes = retorno;
       });
       console.log('Missao do mes ' + mes + ' carregada');
@@ -203,7 +203,7 @@ var calendario = {
       dt.setMonth(dt.getMonth() + 1);
     }
     $('.calendar-table__event').click(function () {
-      alert($(this).prop("id"));
+      //adicione algo auqi
     });
   },
 
