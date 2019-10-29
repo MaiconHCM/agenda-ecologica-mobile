@@ -19,7 +19,7 @@ var calendario = {
     calendario.mesSelecionado = dt1.getMonth();
     calendario.anoSelecionado = dt1.getFullYear();
     calendario.carregaHtml(dt1.getMonth(), dt1.getFullYear());
-    setTimeout(function(){  calendario.carregaMissoes() }, 100);
+    setTimeout(function () { calendario.carregaMissoes() }, 100);
   },
 
   diasNoMes: function (mes, ano) {
@@ -106,7 +106,7 @@ var calendario = {
     let semanaInicio = mesAtual[1].diaSemana;
     let semanaFinal = mesAtual[ultimoDia].diaSemana;
 
-    $('.calendar-container__title').text(calendario.mesParaTexto(mes)+' '+ano);
+    $('.calendar-container__title').text(calendario.mesParaTexto(mes) + ' ' + ano);
     let append = '<div class="calendar-table__row">';
 
 
@@ -196,6 +196,7 @@ var calendario = {
     $('#' + hoje.getMonth() + '_' + hoje.getDate()).addClass('calendar-table__today');
     let dt = new Date(this.anoSelecionado, this.mesSelecionado);
     $('.events__list').html('');
+    this.missaoDiaria();
     dt.setMonth(dt.getMonth() - 1);
 
     for (let index = 0; index < 3; index++) {
@@ -210,24 +211,25 @@ var calendario = {
   carregaHtmlMissoes: function (missoes) {
     let dt = new Date(this.anoSelecionado, this.mesSelecionado);
     let apppendMissoes = '';
+
     for (let prop in missoes) {
       let inicio = new Date(missoes[prop].inicio * 1000);
       let fim = new Date(missoes[prop].fim * 1000);
 
       if ((inicio.getDate() === fim.getDate()) &&
         (inicio.getMonth() === fim.getMonth()) &&
-        (inicio.getFullYear()===fim.getFullYear())
-        ) {
+        (inicio.getFullYear() === fim.getFullYear())
+      ) {
         $('#' + inicio.getMonth() + '_' + inicio.getDate()).addClass('calendar-table__event');
 
         if (inicio.getMonth() === dt.getMonth()) {
           apppendMissoes +=
-            '<li class="events__item">\n\
+            '<li onclick="lista_missoes.descreveMissao(' + missoes[prop].id + ')" class="events__item">\n\
             <div class="events__item--left">\n\
               <span class="events__name">'+ missoes[prop].titulo + '</span>\n\
               <span class="events__date">'+ inicio.getDate() + ' de ' + this.mesParaTexto(inicio.getMonth()) + '</span>\n\
             </div>\n\
-            <span onclick="lista_missoes.descreveMissao('+missoes[prop].id+')" class="events__tag">'+ missoes[prop].pontos + ' Pontos</span>\n\
+            <span class="events__tag">'+ missoes[prop].pontos + ' Pontos</span>\n\
             </li>';
         }
       } else {
@@ -245,17 +247,52 @@ var calendario = {
         if ((inicio.getMonth() === dt.getMonth()) ||
           (fim.getMonth() === dt.getMonth())) {
           apppendMissoes +=
-            '<li class="events__item">\n\
+            '<li onclick="lista_missoes.descreveMissao(' + missoes[prop].id + ')" class="events__item">\n\
               <div class="events__item--left">\n\
                 <span class="events__name">'+ missoes[prop].titulo + '</span>\n\
                 <span class="events__date">'+ inicio.getDate() + ' de ' + this.mesParaTexto(inicio.getMonth()) + ' - ' + fim.getDate() + ' de ' + this.mesParaTexto(fim.getMonth()) + '</span>\n\
               </div>\n\
-              <span onclick="lista_missoes.descreveMissao('+missoes[prop].id+')" class="events__tag">'+ missoes[prop].pontos + ' pontos</span>\n\
+              <span class="events__tag">'+ missoes[prop].pontos + ' pontos</span>\n\
               </li>';
         }
       }
     }
     $('.events__list').append(apppendMissoes);
   },
+  missaoDiaria: function () {
+    apppendMissoes = "";
+    let hoje = new Date();
+
+    if (hoje.getMonth() === this.mesSelecionado) {
+      let quiz = usuario.dados.quizDiario;
+      if (quiz) {
+        let quizDt = new Date(quiz * 1000);
+        quizDt.setHours(0);
+        let minDate = new Date(quizDt);
+        minDate.setDate(minDate + 1);
+        if (hoje > minDate) {
+          apppendMissoes +=
+            '<li onclick="lista_missoes.quiz()" class="events__item">\n\
+              <div class="events__item--left">\n\
+              <span class="events__name">Responda o quiz diário!</span>\n\
+              <span class="events__date">Diário</span>\n\
+              </div>\n\
+              <span class="events__tag">100 Pontos</span>\n\
+            </li>';
+        }
+
+      } else {
+        apppendMissoes +=
+          '<li onclick="lista_missoes.quiz()" class="events__item">\n\
+        <div class="events__item--left">\n\
+          <span class="events__name">Responda o quiz diário!</span>\n\
+          <span class="events__date">Diário</span>\n\
+        </div>\n\
+        <span class="events__tag">100 Pontos</span>\n\
+        </li>';
+      }
+      $('.events__list').append(apppendMissoes);
+    }
+  }
 
 }

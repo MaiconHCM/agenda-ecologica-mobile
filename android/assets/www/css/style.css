@@ -271,7 +271,7 @@ header {
   margin-bottom: 16px;
 }
 .events__item:active {
-  background: #BEC1CA;
+  border-left: 8px solid #86D8C9;
 }
 .events__item--left {
   width: calc(100% - 76px);

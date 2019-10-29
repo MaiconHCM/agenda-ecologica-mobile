@@ -40,6 +40,7 @@
 /var/www/agenda-ecologica-mobile/android/assets/www/config.xml \
 /var/www/agenda-ecologica-mobile/android/assets/www/vendors \
 /var/www/agenda-ecologica-mobile/android/assets/www/index.html \
+/var/www/agenda-ecologica-mobile/android/assets/www/img \
 /var/www/agenda-ecologica-mobile/android/assets/www/fonts \
 /var/www/agenda-ecologica-mobile/android/assets/www/plugins \
 /var/www/agenda-ecologica-mobile/android/assets/www/js/ajax \
@@ -411,6 +412,7 @@
 /var/www/agenda-ecologica-mobile/android/assets/www/vendors/vex-master/dist/css/vex-theme-bottom-right-corner.css \
 /var/www/agenda-ecologica-mobile/android/assets/www/vendors/vex-master/dist/css/vex-fuffy.css \
 /var/www/agenda-ecologica-mobile/android/assets/www/vendors/vex-master/dist/css/vex-theme-flat-attack.css \
+/var/www/agenda-ecologica-mobile/android/assets/www/img/undraw_friendship_mni7.svg \
 /var/www/agenda-ecologica-mobile/android/assets/www/fonts/JTURjIg1_i6t8kCHKm45_dJE3gfD_u50.woff2 \
 /var/www/agenda-ecologica-mobile/android/assets/www/fonts/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2 \
 /var/www/agenda-ecologica-mobile/android/assets/www/fonts/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2 \

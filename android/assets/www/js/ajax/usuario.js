@@ -9,8 +9,9 @@ usuario = {
                     nome: 'admin',
                     senha: 'admin',
                     pontos: 0,
-                    id: 1
-                }
+                    quizDiario:null,
+                    id: 1,
+                },
             });
         };
         if (this.usuarios) {
