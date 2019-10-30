@@ -8,6 +8,9 @@ var calendario = {
   carregaCalendario: function () {
     console.log('Carrega Calendário');
     let dt, dt1, a;
+    calendario.mesSelecionado = null;
+    calendario.anoSelecionado = null;
+    calendario.data={anos: {}};
     dt = new Date();
     dt.setMonth(dt.getMonth() - 1);
     dt1 = new Date();
@@ -198,7 +201,6 @@ var calendario = {
     $('.events__list').html('');
     this.missaoDiaria();
     dt.setMonth(dt.getMonth() - 1);
-
     for (let index = 0; index < 3; index++) {
       this.carregaHtmlMissoes(calendario.data.anos[dt.getFullYear()].meses[dt.getMonth()].missoes)
       dt.setMonth(dt.getMonth() + 1);
@@ -263,14 +265,12 @@ var calendario = {
     apppendMissoes = "";
     let hoje = new Date();
 
-    if (hoje.getMonth() === this.mesSelecionado) {
+    if ((hoje.getMonth() === this.mesSelecionado) && (hoje.getFullYear() === this.anoSelecionado)) {
       let quiz = usuario.dados.quizDiario;
-      alert(quiz);
       if (quiz) {
-        let quizDt = new Date(quiz);
-        let minDate = new Date(quizDt);
+        let minDate = new Date(quiz);
         minDate.setDate(minDate.getDate() + 1);
-        if (hoje > minDate) {
+        if (hoje >= minDate) {
           apppendMissoes +=
             '<li onclick="lista_missoes.quiz()" class="events__item">\n\
               <div class="events__item--left">\n\

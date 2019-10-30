@@ -2,7 +2,6 @@
 /var/www/agenda-ecologica-mobile/android/bin/classes/br/com/saborsul/forcavendas/R$attr.class \
 /var/www/agenda-ecologica-mobile/android/bin/classes/br/com/saborsul/forcavendas/SaborSulForcaVendas.class \
 /var/www/agenda-ecologica-mobile/android/bin/classes/br/com/saborsul/forcavendas/R.class \
-/var/www/agenda-ecologica-mobile/android/bin/classes/br/com/saborsul/forcavendas/AgendaEcologica.class \
 /var/www/agenda-ecologica-mobile/android/bin/classes/br/com/saborsul/forcavendas/R$drawable.class \
 /var/www/agenda-ecologica-mobile/android/bin/classes/br/com/saborsul/forcavendas/R$xml.class \
 /var/www/agenda-ecologica-mobile/android/bin/classes/br/com/saborsul/forcavendas/R$layout.class \

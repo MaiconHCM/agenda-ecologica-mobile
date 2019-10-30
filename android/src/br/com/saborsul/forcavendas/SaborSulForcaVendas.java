@@ -22,7 +22,7 @@ package br.com.saborsul.forcavendas;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class AgendaEcologica extends DroidGap
+public class SaborSulForcaVendas extends DroidGap
 {
     @Override
     public void onCreate(Bundle savedInstanceState)

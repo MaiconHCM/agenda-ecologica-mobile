@@ -3,12 +3,7 @@ app = {
   offlineMode:true,
   inicia: function () {
     console.log('iniciando app');
-    $(".calendar-container__btn--right").click(function () {
-      calendario.mesPosterior();
-    });
-    $(".calendar-container__btn--left").click(function () {
-      calendario.mesAnterior();
-    });
+    missoes.dados=null;
     usuario.recuperar();
     this.verificaLogin();
   },
@@ -77,3 +72,9 @@ app = {
 
 }
 app.inicia();
+$(".calendar-container__btn--right").click(function () {
+  calendario.mesPosterior();
+});
+$(".calendar-container__btn--left").click(function () {
+  calendario.mesAnterior();
+});
