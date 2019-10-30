@@ -9,7 +9,7 @@ usuario = {
                     nome: 'admin',
                     senha: 'admin',
                     pontos: 0,
-                    quizDiario:null,
+                    quizDiario: null,
                     id: 1,
                 },
             });
@@ -57,6 +57,25 @@ usuario = {
             usuario.dados = retrievedObject;
             usuario.longado = true;
         }
+    },
+    menuUsuario: function () {
+        vex.dialog.alert({
+            unsafeMessage:
+                '<h4 class="center">' + usuario.dados.nome + '</h4>\n\
+            <img class="img-responsive" src="./img/undraw_male_avatar_323b.svg" />\n\
+            <p class="center">Você tem '+ usuario.dados.pontos + ' pontos!</p>\n\
+            <input class="button-option" type="button" onclick="usuario.sair()" value="Sair da minha conta" required />'
+        });
+
+
+    },
+    sair: function () {
+        this.longado = false;
+        this.usuarios = null;
+        localStorage.removeItem('usuario');
+        localStorage.removeItem('dados');
+        vex.closeAll();
+        app.inicia();
     }
 
 }

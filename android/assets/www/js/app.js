@@ -27,8 +27,9 @@ app = {
     let vex_login = vex.dialog.open({
       message: 'Vamos Começar 😀',
       input: [
+        '<img class="img-responsive" src="./img/undraw_my_password_d6kg.svg" />',
         '<input id="login-username" name="username" type="text" placeholder="Seu Apelido" required />',
-        '<input id="login-password" name="password" type="password" placeholder="Sua Senha" required />'
+        '<input id="login-password" name="password" type="password" placeholder="Sua Senha" required />',
       ].join(''),
       buttons: [
         $.extend({}, vex.dialog.buttons.YES, { text: 'Entrar' })

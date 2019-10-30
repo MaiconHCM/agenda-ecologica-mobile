@@ -19,17 +19,17 @@
 
 <body>
   <header>
-    <button class="header__btn header__btn--left" title="Menu">
+    <button onclick="usuario.menuUsuario()" class="header__btn header__btn--left" title="Menu">
       <svg class="icon" width="20px" viewBox="0 0 20 16" fill="none">
         <path fill="#fff" d="M0 0h20v2H0zM0 7h20v2H0zM0 14h20v2H0z" />
       </svg>
     </button>
-    <button class="header__btn header__btn--right" title="Add event">
+    <!--<button class="header__btn header__btn--right" title="Add event">
       <svg class="icon" width="26px" viewBox="0 0 512 512">
         <path fill="#fff"
           d="M416 277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416v42.666z" />
       </svg>
-    </button>
+    </button>-->
   </header>
   <main>
     <div class="calendar-container">
@@ -82,8 +82,8 @@
   <!-- Ajax END -->
 
   <!-- Component START -->
-  <script src=".\js\components\calendario.js"></script>
   <script src=".\js\components\lista_missoes.js"></script>
+  <script src=".\js\components\calendario.js"></script>
   <!-- Component END -->
 
   <!-- PROJECT START -->

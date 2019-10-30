@@ -265,19 +265,19 @@ var calendario = {
 
     if (hoje.getMonth() === this.mesSelecionado) {
       let quiz = usuario.dados.quizDiario;
+      alert(quiz);
       if (quiz) {
-        let quizDt = new Date(quiz * 1000);
-        quizDt.setHours(0);
+        let quizDt = new Date(quiz);
         let minDate = new Date(quizDt);
-        minDate.setDate(minDate + 1);
+        minDate.setDate(minDate.getDate() + 1);
         if (hoje > minDate) {
           apppendMissoes +=
             '<li onclick="lista_missoes.quiz()" class="events__item">\n\
               <div class="events__item--left">\n\
-              <span class="events__name">Responda o quiz diário!</span>\n\
+              <span class="events__name">Responda ao quiz diário!</span>\n\
               <span class="events__date">Diário</span>\n\
               </div>\n\
-              <span class="events__tag">100 Pontos</span>\n\
+              <span class="events__tag">50 Pontos</span>\n\
             </li>';
         }
 
@@ -288,7 +288,7 @@ var calendario = {
           <span class="events__name">Responda o quiz diário!</span>\n\
           <span class="events__date">Diário</span>\n\
         </div>\n\
-        <span class="events__tag">100 Pontos</span>\n\
+        <span class="events__tag">50 Pontos</span>\n\
         </li>';
       }
       $('.events__list').append(apppendMissoes);

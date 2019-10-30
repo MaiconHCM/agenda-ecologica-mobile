@@ -292,3 +292,19 @@ header {
   width: 100%;
   height: auto;
 }
+.button-option{
+  width: 100% ;
+  word-wrap: break-word;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+  background: #66DCEC;
+  color: #fff;
+  border: 2px solid #FEFEFE;
+  border-radius: 10px;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Montserrat", sans-serif;
+  padding: 5px;
+}
+.center{
+text-align: center;
+}
