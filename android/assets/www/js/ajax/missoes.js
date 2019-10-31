@@ -10,6 +10,7 @@ missoes = {
           fim: '1573864954',
           titulo: 'Leve embalagem de óleo para Descarte na escola',
           descricao: 'Leve a embalagem de óleo para escola para realizar o descarte correto.',
+          img:1,
           pontos: 250
         },
         2: {
@@ -17,15 +18,17 @@ missoes = {
           inicio: '1574210554',
           fim: '1574210554',
           titulo: 'Plante uma Árvore!',
-          descricao: 'A plantas são nossas amigas! Plante uma árvore e crie uma amizade.',
+          descricao: 'As árvore são nossas amigas! Plante uma árvore e crie uma amizade.',
+          img:2,
           pontos: 300
         },
         3: {
           id:3,
           inicio: '1574674954',
           fim: '1574847754',
-          titulo: 'Leve Pilhas para escola',
+          titulo: 'Leve Pilhas para Descarte Escola',
           descricao: 'Pilhas causam grande poluição na natureza, leve para descarte adequado na escola!',
+          img:3,
           pontos: 250
         },
         4: {
@@ -34,6 +37,7 @@ missoes = {
           fim: '1572169354',
           titulo: 'Missao de teste',
           descricao: 'A ideia se baseia em cards que são missões e geram pontos!',
+          img:4,
           pontos: 100
         },
         5: {
@@ -42,6 +46,7 @@ missoes = {
           fim: '1575366154',
           titulo: 'Inventar brinquedo',
           descricao: 'Crie um briquedo com embalagem usadas (com ajuda de um adulto) e leve para escola!',
+          img:5,
           pontos: 400
         },
         6: {
@@ -50,6 +55,7 @@ missoes = {
           fim: '1575625354',
           titulo: 'Separou o lixo hoje?',
           descricao: 'Reciclar uma tonelada de papel evita a morte de 40 árvores adultas. Você já separou seu lixo hoje?',
+          img:6,
           pontos: 100
         },
         7: {
@@ -58,6 +64,7 @@ missoes = {
           fim: '1575884554',
           titulo: 'Hora do banho!',
           descricao: 'Um banho de 15 minutos, com o registro meio aberto, consome 135 litros de água. Vamos economizar?',
+          img:7,
           pontos: 100
         }
       };

@@ -71,16 +71,10 @@ app = {
   },
 
 }
-app.inicia();
 $(".calendar-container__btn--right").click(function () {
   calendario.mesPosterior();
-  cordova.plugins.notification.local.getDefaults();
-  cordova.plugins.notification.local.schedule({
-    title: 'My first notification',
-    text: 'Thats pretty easy...',
-    foreground: true
-});
 });
 $(".calendar-container__btn--left").click(function () {
   calendario.mesAnterior();
 });
+app.inicia();

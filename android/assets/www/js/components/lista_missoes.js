@@ -4,8 +4,8 @@ lista_missoes = {
         vex.defaultOptions.overlayClosesOnClick = true;
         vex.dialog.alert({
             unsafeMessage:
-                '<h4>' + m.titulo + '!</h4>\n\
-            <img class="img-responsive" src="./img/undraw_friendship_mni7.svg" />\n\
+                '<h4>' + m.titulo + '</h4>\n\
+            <img class="img-responsive" src="./img/'+m.img+'.svg" />\n\
             <p>'+ m.descricao + '</p>\n\
             <small>Complete essa missão e ganhe '+ m.pontos + ' pontos!</small>'
         });
@@ -45,7 +45,7 @@ lista_missoes = {
                 id: 4
             },
             5: {
-                pergunta: "Pra você oque é lixo ?",
+                pergunta: "Para você, oque é lixo ?",
                 correta: "Lixo é um ciclo, que tem destino certo para reciclagem, se possível.",
                 errada: ["Lixo é inutilidades que devem ser jogadas no lixão desordenadamente.",
                     "Qualquer coisa que eu não goste",
@@ -99,7 +99,7 @@ lista_missoes = {
             vex.dialog.alert({
                 unsafeMessage:
                     '<h5 class="center">Resposta Correta!</h5>\n\
-                <img class="img-responsive" src="./img/undraw_friendship_mni7.svg" />\n\
+                <img class="img-responsive" src="./img/1.svg" />\n\
                 <p>Você respondeu corretamente a questão! Ganhou 50 pontos!</p>'
             });
             new Noty({

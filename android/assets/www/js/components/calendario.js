@@ -12,9 +12,9 @@ var calendario = {
     calendario.anoSelecionado = null;
     calendario.data={anos: {}};
     dt = new Date();
-    dt.setMonth(dt.getMonth() - 1);
+    dt.setMonth(dt.getMonth() - 2);
     dt1 = new Date();
-    for (let index = 0; index < 3; index++) {
+    for (let index = 0; index < 4; index++) {
       dt.setMonth(dt.getMonth() + 1);
       a = calendario.diasNoMes(dt.getMonth(), dt.getFullYear());
       calendario.carregaMes(a);
@@ -235,6 +235,7 @@ var calendario = {
             </li>';
         }
       } else {
+        
         $('#' + inicio.getMonth() + '_' + inicio.getDate()).addClass('calendar-table__event calendar-table__event--long calendar-table__event--start');
         let diffTime = Math.abs(inicio - fim);
         let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -271,13 +272,13 @@ var calendario = {
         let minDate = new Date(quiz);
         minDate.setDate(minDate.getDate() + 1);
         if (hoje >= minDate) {
-          apppendMissoes +=
+          apppendMissoes +=co
             '<li onclick="lista_missoes.quiz()" class="events__item">\n\
               <div class="events__item--left">\n\
               <span class="events__name">Responda ao quiz diário!</span>\n\
               <span class="events__date">Diário</span>\n\
               </div>\n\
-              <span class="events__tag">50 Pontos</span>\n\
+              <span class="events__tag events__tag--highlighted">50 Pontos</span>\n\
             </li>';
         }
 
@@ -288,7 +289,7 @@ var calendario = {
           <span class="events__name">Responda o quiz diário!</span>\n\
           <span class="events__date">Diário</span>\n\
         </div>\n\
-        <span class="events__tag">50 Pontos</span>\n\
+        <span class="events__tag events__tag--highlighted">50 Pontos</span>\n\
         </li>';
       }
       $('.events__list').append(apppendMissoes);
